@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Kinza Bagas Adhistira</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        header {
+            background: linear-gradient(135deg, #94fda6 0%, #94fda6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #94fda6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1546519638-68711109d298?w=1200&h=600&fit=crop') center/cover no-repeat;
+            color: white;
+            padding: 6rem 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #94fda6;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #94fda6;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        section h2 {
+            color: #94fda6;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #94fda6;
+            padding-left: 1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #94fda6 0%, #94fda6 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(148, 253, 166, 0.3);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #94fda6;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(148, 253, 166, 0.2);
+        }
+
+        .education-card h3 {
+            color: #94fda6;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .school {
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .year {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #94fda6;
+            margin-bottom: 2rem;
+            transition: 0.3s;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 10px 25px rgba(148, 253, 166, 0.2);
+        }
+
+        .experience-item h3 {
+            color: #94fda6;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .company {
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .duration {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #94fda6 0%, #94fda6 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-item {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #94fda6;
+            text-align: center;
+        }
+
+        .skill-item h4 {
+            color: #94fda6;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+                margin: 0 auto;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">🟢 KBA</div>
+            <ul>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#education">Pendidikan</a></li>
+                <li><a href="#experience">Pengalaman</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Kinza Bagas Adhistira</h1>
+        <p class="hero-subtitle">Siswa SMA Wardaya</p>
+        <p>Bersemangat belajar dan berkembang menjadi profesional muda yang berkontribusi positif</p>
+        <a href="#about" class="cta-button">Pelajari Lebih Lanjut</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="container" id="about">
+        <h2>Tentang Saya</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Halo! Saya Kinza Bagas Adhistira, seorang siswa yang sedang menempuh pendidikan di SMA Wardaya. 
+                    Saya memiliki semangat tinggi untuk belajar dan mengembangkan diri dalam berbagai bidang.
+                </p>
+                <p>
+                    Dengan latar belakang pendidikan yang solid dari SD Pribadi Depok (lulus 2021) dan SMP yang lulus tahun 2024, 
+                    saya terus berusaha meningkatkan kemampuan akademik dan soft skill.
+                </p>
+                <p>
+                    Saya percaya bahwa setiap pengalaman adalah pembelajaran berharga, dan saya terbuka untuk peluang magang 
+                    dan program pengembangan diri lainnya yang dapat memperluas wawasan dan keterampilan saya.
+                </p>
+            </div>
+            <div class="profile-image">👨‍🎓</div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="container" id="education">
+        <h2>Pendidikan</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>Sekolah Dasar</h3>
+                <p class="school">SD Pribadi Depok</p>
+                <p class="year">Lulus: 2021</p>
+                <p>Menyelesaikan pendidikan dasar dengan penuh dedikasi dan semangat belajar yang tinggi.</p>
+            </div>
+            <div class="education-card">
+                <h3>Sekolah Menengah Pertama</h3>
+                <p class="school">SMP (SMP pribadi depok)</p>
+                <p class="year">Lulus: 2024</p>
+                <p>Melanjutkan perjalanan pendidikan dengan meningkatkan pengetahuan dan keterampilan akademik.</p>
+            </div>
+            <div class="education-card">
+                <h3>Sekolah Menengah Atas</h3>
+                <p class="school">SMA Wardaya</p>
+                <p class="year">Saat Ini</p>
+                <p>Sedang menempuh pendidikan di SMA Wardaya dengan fokus pada pengembangan akademik dan kepribadian.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="container" id="experience">
+        <h2>Pengalaman</h2>
+        <div class="experience-item">
+            <h3>Magang Pengalaman</h3>
+            <p class="company">KPU (Komisi Pemilihan Umum)</p>
+            <p class="duration">Durasi: 1 Minggu</p>
+            <p>
+                Saya mengikuti program magang di KPU yang memberikan pengalaman berharga tentang sistem demokrasi dan mekanisme 
+                pemilihan umum. Selama masa magang, saya mempelajari berbagai aspek administratif dan teknis dalam penyelenggaraan 
+                pemilihan umum yang demokratis dan transparan.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="container" id="skills">
+        <h2>Keahlian</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h4>📚 Pembelajaran Cepat</h4>
+                <p>Kemampuan untuk mempelajari hal baru dengan cepat dan efisien</p>
+            </div>
+            <div class="skill-item">
+                <h4>🤝 Kerja Sama Tim</h4>
+                <p>Bekerja sama secara harmonis dalam tim untuk mencapai tujuan bersama</p>
+            </div>
+            <div class="skill-item">
+                <h4>💬 Komunikasi</h4>
+                <p>Kemampuan berkomunikasi efektif dalam berbagai situasi</p>
+            </div>
+            <div class="skill-item">
+                <h4>🎯 Inisiatif</h4>
+                <p>Proaktif mengambil inisiatif untuk menyelesaikan tugas</p>
+            </div>
+            <div class="skill-item">
+                <h4>🧠 Analisis</h4>
+                <p>Kemampuan menganalisis masalah dan mencari solusi yang tepat</p>
+            </div>
+            <div class="skill-item">
+                <h4>⏰ Manajemen Waktu</h4>
+                <p>Mengelola waktu secara efisien untuk produktivitas maksimal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container" id="contact">
+        <h2>Kontak</h2>
+        <div style="text-align: center; padding: 2rem;">
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                Tertarik untuk berkolaborasi atau memiliki pertanyaan? Hubungi saya melalui saluran berikut:
+            </p>
+            <p style="margin-bottom: 1rem;">
+                <strong>Email:</strong> kinzabagas@gmail.com
+            </p>
+            <p style="margin-bottom: 1rem;">
+                <strong>Telepon:</strong> +62 (822-6033-3629)
+            </p>
+            <p>
+                <strong>Lokasi:</strong> Depok, Jawa Barat, Indonesia
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kinza Bagas Adhistira. All Rights Reserved.</p>
+        <p>Portofolio Pribadi - Siswa SMA Wardaya</p>
+    </footer>
+</body>
+</html>
